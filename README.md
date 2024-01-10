@@ -160,7 +160,25 @@ Options used to generate import code with given SVGR output (See [ESBuild Transf
   }),
 ```
 
-# SVGO & Other SVGR Plugins
+# SVGO, Prettier & Other SVGR Plugins
+
+SVGO and Prettier are supported out of the box. Just mark them in the svgrConfig and they'll start working.
+
+You can also include your own SVGR plugins as you desire!
+
+```ts
+import myCustomPlugin from "my-custom-svgr-plugin";
+
+richSvg({
+  componentLoaderOptions: {
+    svgrConfig: {
+      svgo: true,
+      prettier: true,
+      plugins: [myCustomPlugin]
+    },
+  },
+}),
+```
 
 ## License
 

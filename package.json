@@ -5,7 +5,10 @@
   "keywords": [
     "vite-plugin",
     "svg",
-    "svgr"
+    "svgr",
+    "rich",
+    "import",
+    "prettier"
   ],
   "type": "module",
   "source": "./plugin/index.ts",

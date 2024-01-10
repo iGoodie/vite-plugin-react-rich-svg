@@ -17,6 +17,7 @@ export async function resolveReactComponent(
   if (svgrConfig?.svgo) {
     svgrDefaultPlugins.push((await import("@svgr/plugin-svgo")).default);
   }
+  
   svgrDefaultPlugins.push(jsxPlugin);
 
   if (svgrConfig?.prettier) {

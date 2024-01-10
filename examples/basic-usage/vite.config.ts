@@ -7,14 +7,11 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     richSvg({
-      // include: (path) => /.*\.icon\.svg$/.test(path),
       componentLoaderOptions: {
         svgrConfig: {
           svgo: true,
           prettier: true,
-          svgoConfig: {},
         },
-        esbuildConfig: {},
       },
     }),
   ],

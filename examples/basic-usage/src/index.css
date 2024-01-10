@@ -85,7 +85,8 @@ nav {
     box-sizing: border-box;
     margin: 0;
     padding: 12px 16px;
-    height: 100%;
+    min-height: 100%;
+    max-height: 320px;
     background: #1e2228;
     border-radius: 6px;
     font-family: "Courier New", Courier, monospace;
@@ -106,7 +107,7 @@ nav {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
   height: 8px;
 }
 
@@ -123,4 +124,10 @@ nav {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #84878b;
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  display: none;
+  background: transparent;
 }
