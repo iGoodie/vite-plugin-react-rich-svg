@@ -12,11 +12,22 @@ export async function resolveReactComponent(
 ) {
   const svg = await readFile(path, "utf-8");
 
+  const svgrDefaultPlugins = [];
+
+  if (svgrConfig?.svgo) {
+    svgrDefaultPlugins.push((await import("@svgr/plugin-svgo")).default);
+  }
+  svgrDefaultPlugins.push(jsxPlugin);
+
+  if (svgrConfig?.prettier) {
+    svgrDefaultPlugins.push((await import("@svgr/plugin-prettier")).default);
+  }
+
   const svgrCode = await transform(svg, svgrConfig, {
     filePath: id,
     caller: {
       previousExport: null,
-      defaultPlugins: [jsxPlugin],
+      defaultPlugins: svgrDefaultPlugins,
     },
   });
 
