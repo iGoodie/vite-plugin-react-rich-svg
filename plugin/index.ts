@@ -16,7 +16,7 @@ export default function (): Plugin {
       switch (query) {
         case "raw":
           return resolveRaw(path);
-        case "dateURI":
+        case "dataURI":
           return resolveDataURI(path);
       }
     },
