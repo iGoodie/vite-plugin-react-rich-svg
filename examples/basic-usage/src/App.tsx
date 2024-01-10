@@ -4,30 +4,52 @@ import viteLogoRaw from "./assets/vite.svg?raw";
 // Data URI import
 import viteLogoDataURI from "./assets/vite.svg?dataURI";
 
+// SVGR Component import
+import ViteLogoComponent from "./assets/vite.svg?component";
+
 // Default import, not handled by our plugin
 import viteLogo from "./assets/vite.svg";
 
 function App() {
   return (
     <main>
+      <h1>vite-plugin-react-rich-svg</h1>
       <div className="logo">
-        <h1>Raw</h1>
+        <h1>
+          Raw - <em>*.svg?raw</em>
+        </h1>
         <div dangerouslySetInnerHTML={{ __html: viteLogoRaw }} />
         <code>
-          "{viteLogoRaw.replace(/\r?\n/g, "\\r\\n")}"{"\n\n"}
+          export default "
+          {viteLogoRaw.replaceAll('"', '\\"').replace(/\r?\n/g, "\\r\\n")}"
         </code>
       </div>
 
       <div className="logo">
-        <h1>Data URI</h1>
+        <h1>
+          Data URI - <em>*.svg?dataURI</em>
+        </h1>
         <img src={viteLogoDataURI} alt="Vite logo" />
         <code>
-          "{viteLogoDataURI}"{"\n\n"}
+          export default "{viteLogoDataURI}"{"\n\n"}
         </code>
       </div>
 
       <div className="logo">
-        <h1>Default Handler</h1>
+        <h1>
+          Component - <em>*.svg?component</em>
+        </h1>
+        <ViteLogoComponent />
+        <code>
+          export default {ViteLogoComponent.toString()}
+          {"\n\n"}
+        </code>
+      </div>
+
+      <div className="logo">
+        <h1>
+          Default Handler - <em>*.svg</em>
+        </h1>
         <img src={viteLogo} alt="Vite logo" />
         <code>
           // This value depends on your vite config,

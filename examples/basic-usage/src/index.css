@@ -110,7 +110,6 @@ main {
     font-family: "Courier New", Courier, monospace;
     overflow: auto;
     white-space: pre;
-    cursor: text;
   }
 }
 
@@ -119,7 +118,9 @@ main {
   gap: 5px;
   flex-direction: column;
   align-items: center;
-  cursor: text;
+}
+
+.code.keyword {
 }
 
 /* width */
