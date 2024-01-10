@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "module": "ES2015",
-    "moduleResolution": "Bundler",
-    "esModuleInterop": true,
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": "./",
     "outDir": "./dist"
   },
-  "include": ["./plugin"],
+  "include": ["./plugin/**/*", "node_modules/microbundle/index.d.ts"],
   "exclude": ["examples/", "node_modules/"]
 }
