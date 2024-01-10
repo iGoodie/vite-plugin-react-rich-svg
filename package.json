@@ -1,0 +1,24 @@
+{
+  "name": "vite-plugin-react-rich-svg",
+  "version": "0.0.5",
+  "description": "Seamless SVG loader with versatile import options! (Such as dataURI, component and raw html code)",
+  "type": "module",
+  "keywords": [
+    "vite-plugin"
+  ],
+  "main": "./dist/plugin/index.js",
+  "types": "./dist/plugin/index.d.ts",
+  "scripts": {
+    "build": "tsc --build tsconfig.json && copyfiles client.d.ts dist/",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.8",
+    "@types/react": "^18.2.19",
+    "copyfiles": "^2.4.1",
+    "react-dom": "^18.2.0",
+    "vite": "^5.0.11"
+  }
+}

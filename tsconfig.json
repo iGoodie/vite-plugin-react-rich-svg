@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ES2015",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "outDir": "./dist"
+  },
+  "include": ["./plugin"],
+  "exclude": ["examples/", "node_modules/"]
+}
