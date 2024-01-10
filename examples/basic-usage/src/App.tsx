@@ -1,23 +1,35 @@
 // Raw string import
 import viteLogoRaw from "./assets/vite.svg?raw";
 
-// Data URI import
-import viteLogoDataURI from "./assets/vite.svg?dataURI";
+// Data URL import
+import viteLogoDataURL from "./assets/vite.svg?url";
 
 // SVGR Component import
 import ViteLogoComponent from "./assets/vite.svg?component";
 
 // Default import, not handled by our plugin
 import viteLogo from "./assets/vite.svg";
+import arrowIcon from "./assets/arrow.svg";
 
 function App() {
   return (
     <main>
       <h1>vite-plugin-react-rich-svg</h1>
+      <nav>
+        <a href="https://github.com/iGoodie/vite-plugin-react-rich-svg">
+          <span>Github</span>
+        </a>
+        <span>•</span>
+        <a href="https://www.npmjs.com/package/vite-plugin-react-rich-svg">
+          <span>Npm Page</span>
+        </a>
+      </nav>
+
       <div className="logo">
         <h1>
           Raw - <em>*.svg?raw</em>
         </h1>
+        <img className="arrow" src={arrowIcon} />
         <div dangerouslySetInnerHTML={{ __html: viteLogoRaw }} />
         <code>
           export default "
@@ -27,11 +39,12 @@ function App() {
 
       <div className="logo">
         <h1>
-          Data URI - <em>*.svg?dataURI</em>
+          Data URL - <em>*.svg?url</em>
         </h1>
-        <img src={viteLogoDataURI} alt="Vite logo" />
+        <img className="arrow" src={arrowIcon} />
+        <img src={viteLogoDataURL} alt="Vite logo" />
         <code>
-          export default "{viteLogoDataURI}"{"\n\n"}
+          export default "{viteLogoDataURL}"{"\n\n"}
         </code>
       </div>
 
@@ -39,6 +52,7 @@ function App() {
         <h1>
           Component - <em>*.svg?component</em>
         </h1>
+        <img className="arrow" src={arrowIcon} />
         <ViteLogoComponent />
         <code>
           export default {ViteLogoComponent.toString()}
@@ -50,6 +64,7 @@ function App() {
         <h1>
           Default Handler - <em>*.svg</em>
         </h1>
+        <img className="arrow" src={arrowIcon} />
         <img src={viteLogo} alt="Vite logo" />
         <code>
           // This value depends on your vite config,

@@ -18,7 +18,7 @@
   <a href="https://github.com/iGoodie/vite-plugin-react-rich-svg/tags">
     <img src="https://img.shields.io/github/v/tag/iGoodie/vite-plugin-react-rich-svg"/>
   </a>
-  <a href="https://github.com/iGoodie/paper-editor">
+  <a href="https://github.com/iGoodie/vite-plugin-react-rich-svg">
     <img src="https://img.shields.io/github/languages/top/iGoodie/vite-plugin-react-rich-svg"/>
   </a>
 
