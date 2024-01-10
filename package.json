@@ -20,12 +20,15 @@
   "scripts": {
     "clear": "rimraf dist/",
     "build": "npm run clear && microbundle plugin/*.ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "predeploy": "cd examples/basic-usage && npm i && npm run build",
+    "deploy": "gh-pages -d examples/basic-usage/dist"
   },
   "devDependencies": {
     "@types/node": "^20.10.8",
     "@types/react": "^18.2.19",
     "del": "^7.1.0",
+    "gh-pages": "^6.1.1",
     "microbundle": "^0.15.1",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5"
