@@ -92,6 +92,9 @@ import viteLogoRaw from "./assets/vite.svg?raw";
 // Data URL import
 import viteLogoDataURL from "./assets/vite.svg?url";
 
+// Base64 Encoded import
+import viteLogoBase64 from "./assets/vite.svg?base64";
+
 // SVGR Component import
 import ViteLogoComponent from "./assets/vite.svg?component";
 
