@@ -4,6 +4,7 @@ import type { Config as SvgrConfig } from "@svgr/core";
 import { resolveDataURI } from "./resolvers/dataURI";
 import { resolveRaw } from "./resolvers/raw";
 import { resolveReactComponent } from "plugin/resolvers/component";
+import { resolveBase64 } from "plugin/resolvers/base64";
 
 export default function (options?: {
   /**
@@ -63,6 +64,8 @@ export default function (options?: {
           return resolveRaw(path);
         case "url":
           return resolveDataURI(path);
+        case "base64":
+          return resolveBase64(path);
       }
     },
 

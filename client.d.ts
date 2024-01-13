@@ -9,6 +9,17 @@ declare module "*.svg?url" {
   export default src;
 }
 
+declare module "*.svg?base64" {
+  /**
+   * Imports svg as an encoded base64 string
+   *
+   * @example
+   * "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53..."
+   */
+  const src: string;
+  export default src;
+}
+
 declare module "*.svg?raw" {
   /**
    * Imports the actual text content of the svg file/code

@@ -4,6 +4,9 @@ import viteLogoRaw from "./assets/vite.svg?raw";
 // Data URL import
 import viteLogoDataURL from "./assets/vite.svg?url";
 
+// Base64 Encoded import
+import viteLogoBase64 from "./assets/vite.svg?base64";
+
 // SVGR Component import
 import ViteLogoComponent from "./assets/vite.svg?component";
 
@@ -45,6 +48,20 @@ function App() {
         <img src={viteLogoDataURL} alt="Vite logo" />
         <code>
           export default "{viteLogoDataURL}"{"\n\n"}
+        </code>
+      </div>
+
+      <div className="logo">
+        <h1>
+          Data URL - <em>*.svg?base64</em>
+        </h1>
+        <img className="arrow" src={arrowIcon} />
+        <img
+          src={`data:image/svg+xml;base64,${viteLogoBase64}`}
+          alt="Vite logo"
+        />
+        <code>
+          export default "{viteLogoBase64}"{"\n\n"}
         </code>
       </div>
 
