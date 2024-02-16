@@ -5,7 +5,11 @@ import richSvg from "vite-plugin-react-rich-svg";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: ["@mightymeld/runtime/babel-plugin-mightymeld"]
+      }
+    }),
     richSvg({
       componentLoaderOptions: {
         svgrConfig: {
