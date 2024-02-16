@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,98 +15,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-main {
-  margin: 6rem 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  align-items: center;
-  justify-content: center;
-
-  hr {
-    width: 100px;
-  }
-}
-
-nav {
-  margin-top: -40px;
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
-}
-
-.logo {
-  width: 60%;
-  min-height: 200px;
-  position: relative;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 64px auto;
-  grid-template-rows: auto 1fr;
-  align-items: start;
-  gap: 18px 20px;
-
-  h1 {
-    margin: 0;
-    grid-column: 1 / span 2;
-    font-size: 18px;
-    text-wrap: nowrap;
-  }
-
-  .arrow {
-    position: absolute;
-    top: 95px;
-    left: -25px;
-  }
-
-  code {
-    flex-grow: 1;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 12px 16px;
-    min-height: 100%;
-    max-height: 320px;
-    background: #1e2228;
-    border-radius: 6px;
-    font-family: "Courier New", Courier, monospace;
-    overflow: auto;
-    white-space: pre;
-  }
-}
-
-.license {
-  display: flex;
-  gap: 5px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.code.keyword {
+  @apply bg-gradient-to-r from-gray-800 to-black;
 }
 
 /* width */
