@@ -34,7 +34,7 @@ function App() {
         </a>
       </nav>
 
-      <section className="max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
+      <section className="max-w-[500px] md:max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
         <h1 className="text-lg font-bold col-span-2">
           Raw - <em>*.svg?raw</em>
         </h1>
@@ -56,7 +56,7 @@ function App() {
 
       <div className="p-4" />
 
-      <section className="max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
+      <section className="max-w-[500px] md:max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
         <h1 className="text-lg font-bold col-span-2">
           Data URL - <em>*.svg?url</em>
         </h1>
@@ -73,7 +73,7 @@ function App() {
 
       <div className="p-4" />
 
-      <section className="max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
+      <section className="max-w-[500px] md:max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
         <h1 className="text-lg font-bold col-span-2">
           Data URL - <em>*.svg?base64</em>
         </h1>
@@ -92,7 +92,7 @@ function App() {
 
       <div className="p-4" />
 
-      <section className="max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
+      <section className="max-w-[500px] md:max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
         <h1 className="text-lg font-bold col-span-2">
           Component - <em>*.svg?component</em>
         </h1>
@@ -112,7 +112,7 @@ function App() {
 
       <div className="p-4" />
 
-      <section className="max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
+      <section className="max-w-[500px] md:max-w-[800px] mx-auto grid grid-cols-[auto,1fr] gap-x-[16px] gap-y-[8px] relative">
         <h1 className="text-lg font-bold col-span-2">
           Default Handler - <em>*.svg</em>
         </h1>
