@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-react-rich-svg",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Seamless SVG loader with versatile import options! (Such as React component, dataURI and raw html code)",
   "keywords": [
     "vite-plugin",
