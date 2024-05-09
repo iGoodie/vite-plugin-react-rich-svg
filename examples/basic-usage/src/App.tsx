@@ -151,7 +151,7 @@ function App() {
           {"\n"}
           // as this plugin passes, when svg import is missing a query
           {"\n\n"}
-          {typeof exampleDefault === "string"
+          export default {typeof exampleDefault === "string"
             ? `"${exampleDefault.replace(/\r?\n/g, "\\r\\n")}"`
             : // @ts-expect-error typeof viteLogo depends on the vite config.
               exampleDefault.toString()}
