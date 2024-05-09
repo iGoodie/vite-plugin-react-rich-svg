@@ -29,7 +29,7 @@
     "clear": "rimraf dist/",
     "build": "npm run clear && microbundle plugin/*.ts",
     "prepublishOnly": "npm run build",
-    "predeploy": "cd examples/basic-usage && npm i && npm run build",
+    "predeploy": "cd examples/basic-usage && pnpm i && pnpm run build",
     "deploy": "gh-pages -d examples/basic-usage/dist"
   },
   "devDependencies": {
