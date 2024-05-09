@@ -3,7 +3,7 @@
   <img src="https://raw.githubusercontent.com/iGoodie/vite-plugin-react-rich-svg/master/.github/assets/logo.svg" height="100px" alt="Logo"/>
 </p>
 <h1 align="center">
-  vite-plugin-react-rich-svg
+  Vite Plugin: React Rich SVG
 </h1>
 
 <!-- Slogan -->
