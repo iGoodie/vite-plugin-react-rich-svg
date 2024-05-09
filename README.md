@@ -1,11 +1,14 @@
 <!-- Logo -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/iGoodie/vite-plugin-react-rich-svg/master/.github/assets/logo.svg" height="100px" alt="Logo"/>
+</p>
 <h1 align="center">
   vite-plugin-react-rich-svg
 </h1>
 
 <!-- Slogan -->
 <p align="center">
-   Seamless SVG loader with versatile import options
+   Seamless SVG loader with versatile import options (see <a href="https://igoodie.github.io/vite-plugin-react-rich-svg/">demo page</a>)
 </p>
 <!-- Badges -->
 <p align="center">

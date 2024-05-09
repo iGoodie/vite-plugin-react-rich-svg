@@ -45,3 +45,10 @@
   display: none;
   background: transparent;
 }
+
+code > pre {
+  width: 100%;
+  background: transparent !important;
+  padding: 2rem !important;
+  white-space: wrap;
+}
