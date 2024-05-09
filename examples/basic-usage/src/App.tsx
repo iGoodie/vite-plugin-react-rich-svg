@@ -37,9 +37,9 @@ function App() {
         <h1 className="flex flex-col justify-center items-center text-3xl font-bold tracking-wider p-4 text-white">
           <img src={logo} className="h-[150px]" />
           <span>
-            <span className="text-[#ae8cf8]">vite</span>-plugin-
-            <span className="text-[#61DAFB]">react</span>-rich-
-            <span className="text-[#FFB13B]">svg</span>
+            <span className="text-[#ae8cf8]">vite-plugin</span>-
+            <span className="text-[#61DAFB]">react</span>-
+            <span className="text-[#FFB13B]">rich-svg</span>
           </span>
           <span className="text-base opacity-50 mt-2 font-normal">
             Seamless SVG loader with versatile import options
