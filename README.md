@@ -135,9 +135,11 @@ Acts as a blacklist predicate for the files you want to be ignored.
   }),
 ```
 
-## `componentLoaderOptions.svgrConfig` option
+## `componentLoaderOptions` option
 
-Options used while running SVGR on the original svg code/asset (See [SVGR Options](https://react-svgr.com/docs/options/))
+- `svgrConfig` = Options used while running SVGR on the original svg code/asset (See [SVGR Options](https://react-svgr.com/docs/options/))
+
+- `esbuildConfig` = Options used to generate import code with given SVGR output (See [ESBuild Transform Options](https://esbuild.github.io/api/#transform))
 
 ```ts
   richSvg({
@@ -147,21 +149,57 @@ Options used while running SVGR on the original svg code/asset (See [SVGR Option
         memo: true,
       },
       // ^ This config will make it load component svg imports loads with forwardedRef & memo wrapped
+
+
+      esbuildConfig:{
+        minify: true
+      },
+      // ^ This config will make it load component svg imports loads with minification enabled
     },
   }),
 ```
 
-## `componentLoaderOptions.esbuildConfig` option
+## `rawLoaderOptions` option
 
-Options used to generate import code with given SVGR output (See [ESBuild Transform Options](https://esbuild.github.io/api/#transform))
+- `svgoEnabled` = Enables SVGO optimizations
+
+- `svgoConfig` = Options used while running SVGO optimizations on the original SVG asset (See [SVGO Options](https://github.com/svg/svgo#configuration))
 
 ```ts
   richSvg({
-    componentLoaderOptions: {
-      esbuildConfig:{
-        minify: true
-      }
-      // ^ This config will make it load component svg imports loads with minification enabled
+    rawLoaderOptions: {
+      svgoEnabled: true,
+      svgoConfig: {},
+    },
+  }),
+```
+
+## `base64LoaderOptions` option
+
+- `svgoEnabled` = Enables SVGO optimizations
+
+- `svgoConfig` = Options used while running SVGO optimizations on the original SVG asset (See [SVGO Options](https://github.com/svg/svgo#configuration))
+
+```ts
+  richSvg({
+    base64LoaderOptions: {
+      svgoEnabled: true,
+      svgoConfig: {},
+    },
+  }),
+```
+
+## `urlLoaderOptions` option
+
+- `svgoEnabled` = Enables SVGO optimizations
+
+- `svgoConfig` = Options used while running SVGO optimizations on the original SVG asset (See [SVGO Options](https://github.com/svg/svgo#configuration))
+
+```ts
+  richSvg({
+    urlLoaderOptions: {
+      svgoEnabled: true,
+      svgoConfig: {},
     },
   }),
 ```
@@ -173,16 +211,39 @@ SVGO and Prettier are supported out of the box. Just mark them in the svgrConfig
 You can also include your own SVGR plugins as you desire!
 
 ```ts
-import myCustomPlugin from "my-custom-svgr-plugin";
+import myCustomSvgrPlugin from "my-custom-svgr-plugin";
+import myCustomSvgoPlugin from "my-custom-svgo-plugin";
+import myCustomPrettierPlugin from "my-custom-prettier-plugin";
 
 richSvg({
   componentLoaderOptions: {
     svgrConfig: {
       svgo: true,
       prettier: true,
-      plugins: [myCustomPlugin]
+      prettierConfig: {
+        plugins: ["prettier-plugin-foo"]
+      },
+      plugins: [myCustomSvgrPlugin],
     },
   },
+  rawLoaderOptions: {
+    svgoEnabled: true,
+    svgoConfig: {
+      plugins: [myCustomSvgoPlugin]
+    }
+  },
+  base64LoaderOptions: {
+    svgoEnabled: true,
+    svgoConfig: {
+      plugins: [myCustomSvgoPlugin]
+    }
+  },
+  urlLoaderOptions: {
+    svgoEnabled: true,
+    svgoConfig: {
+      plugins: [myCustomSvgoPlugin]
+    }
+  }
 }),
 ```
 
