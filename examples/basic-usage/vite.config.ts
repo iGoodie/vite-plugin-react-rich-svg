@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react({
       babel: {
-        plugins: ["@mightymeld/runtime/babel-plugin-mightymeld"]
-      }
+        plugins: ["@mightymeld/runtime/babel-plugin-mightymeld"],
+      },
     }),
     richSvg({
       componentLoaderOptions: {
@@ -16,6 +16,10 @@ export default defineConfig(({ mode }) => ({
           svgo: true,
           prettier: true,
         },
+      },
+      rawLoaderOptions: {
+        svgoEnabled: true,
+        svgoConfig: {},
       },
     }),
   ],

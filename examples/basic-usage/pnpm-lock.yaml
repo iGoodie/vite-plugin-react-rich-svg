@@ -3687,6 +3687,7 @@ snapshots:
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.4.5))
       '@svgr/plugin-prettier': 8.1.0(@svgr/core@8.1.0(typescript@5.4.5))
       '@svgr/plugin-svgo': 8.1.0(@svgr/core@8.1.0(typescript@5.4.5))(typescript@5.4.5)
+      svgo: 3.3.2
       vite: 5.2.11(@types/node@20.12.11)
     transitivePeerDependencies:
       - '@types/node'
