@@ -39,6 +39,38 @@ export interface PluginOptions {
   };
 
   /**
+   * Options used while resolving as "?url"
+   */
+  urlLoaderOptions?: {
+    /**
+     * Enables SVGO optimizations while loading the SVG asset
+     * @default false
+     */
+    svgoEnabled?: boolean;
+
+    /**
+     * Options used while running SVGO optimizations on the original SVG asset
+     */
+    svgoConfig?: SvgoConfig;
+  };
+
+  /**
+   * Options used while resolving as "?base64"
+   */
+  base64LoaderOptions?: {
+    /**
+     * Enables SVGO optimizations while loading the SVG asset
+     * @default false
+     */
+    svgoEnabled?: boolean;
+
+    /**
+     * Options used while running SVGO optimizations on the original SVG asset
+     */
+    svgoConfig?: SvgoConfig;
+  };
+
+  /**
    * Options used while resolving as "?component"
    */
   componentLoaderOptions?: {
@@ -54,8 +86,6 @@ export interface PluginOptions {
 }
 
 export default function (options?: PluginOptions): Plugin {
-  const { componentLoaderOptions } = options ?? {};
-
   interface HandlerParams {
     id: string;
     path: string;
@@ -67,20 +97,15 @@ export default function (options?: PluginOptions): Plugin {
     },
 
     url: ({ path }: HandlerParams) => {
-      return resolveDataURI(path);
+      return resolveDataURI(path, options?.urlLoaderOptions);
     },
 
     base64: ({ path }: HandlerParams) => {
-      return resolveBase64(path);
+      return resolveBase64(path, options?.base64LoaderOptions);
     },
 
     component: ({ id, path }: HandlerParams) => {
-      return resolveReactComponent(
-        id,
-        path,
-        componentLoaderOptions?.svgrConfig,
-        componentLoaderOptions?.esbuildConfig
-      );
+      return resolveReactComponent(id, path, options?.componentLoaderOptions);
     },
   };
 

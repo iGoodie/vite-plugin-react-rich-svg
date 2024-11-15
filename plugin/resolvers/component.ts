@@ -1,23 +1,25 @@
-import type { Config as SvgrConfig } from "@svgr/core";
 import { transform } from "@svgr/core";
 import jsxPlugin from "@svgr/plugin-jsx";
 import { readFile } from "fs/promises";
-import { EsbuildTransformOptions, transformWithEsbuild } from "vite";
+import { transformWithEsbuild } from "vite";
+import type { PluginOptions } from "../index";
 
 export async function resolveReactComponent(
   id: string,
   path: string,
-  svgrConfig?: SvgrConfig,
-  esbuildConfig?: EsbuildTransformOptions
+  config?: PluginOptions["componentLoaderOptions"]
 ) {
   const svg = await readFile(path, "utf-8");
+
+  const svgrConfig = config?.svgrConfig ?? {};
+  const esbuildConfig = config?.esbuildConfig ?? {};
 
   const svgrDefaultPlugins = [];
 
   if (svgrConfig?.svgo) {
     svgrDefaultPlugins.push((await import("@svgr/plugin-svgo")).default);
   }
-  
+
   svgrDefaultPlugins.push(jsxPlugin);
 
   if (svgrConfig?.prettier) {

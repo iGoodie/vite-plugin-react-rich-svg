@@ -21,6 +21,12 @@ export default defineConfig(({ mode }) => ({
         svgoEnabled: true,
         svgoConfig: {},
       },
+      base64LoaderOptions: {
+        svgoEnabled: true,
+      },
+      urlLoaderOptions: {
+        svgoEnabled: true,
+      },
     }),
   ],
   base: mode === "development" ? "/" : "/vite-plugin-react-rich-svg/", // <- Here, so we can deploy this example to Github Pages
