@@ -33,23 +33,25 @@
     "deploy": "gh-pages -d examples/basic-usage/dist"
   },
   "devDependencies": {
-    "@types/node": "^20.10.8",
-    "@types/react": "^18.2.19",
-    "del": "^7.1.0",
-    "gh-pages": "^6.1.1",
+    "@types/node": "^24.3.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "del": "^8.0.0",
+    "gh-pages": "^6.3.0",
     "microbundle": "^0.15.1",
-    "react-dom": "^18.2.0",
-    "rimraf": "^5.0.5",
-    "vite": "^6.2.3"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "rimraf": "^6.0.1",
+    "vite": "^7.1.5"
   },
   "peerDependencies": {
-    "vite": "^5 || ^6"
+    "vite": "^5 || ^6 || ^7"
   },
   "dependencies": {
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-prettier": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
-    "svgo": "^3.3.2"
+    "svgo": "^4.0.0"
   }
 }

@@ -167,7 +167,7 @@ function App() {
       <hr className="mt-4 mb-4 max-w-[100px] mx-auto" />
 
       <div className="flex flex-col justify-center items-center gap-[16px] py-4">
-        <span>© 2024 Taha Anılcan Metinyurt (iGoodie)</span>
+        <span>© {new Date().getFullYear()} Taha Anılcan Metinyurt (iGoodie)</span>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
           <img
             alt="Creative Commons License"
