@@ -27,5 +27,6 @@ export async function resolveDataURI(
   return {
     code: `const svg="${svg}";export default svg;`,
     map: null,
+    moduleType: "js",
   };
 }

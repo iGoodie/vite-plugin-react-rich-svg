@@ -19,5 +19,6 @@ export async function resolveBase64(
   return {
     code: `const svg="${svg}";export default svg;`,
     map: null,
+    moduleType: "js",
   };
 }

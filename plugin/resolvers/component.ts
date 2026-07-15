@@ -1,7 +1,7 @@
 import { transform } from "@svgr/core";
 import jsxPlugin from "@svgr/plugin-jsx";
 import { readFile } from "fs/promises";
-import { transformWithEsbuild } from "vite";
+import { transformWithOxc } from "vite";
 import type { PluginOptions } from "../index";
 
 export async function resolveReactComponent(
@@ -12,7 +12,7 @@ export async function resolveReactComponent(
   const svg = await readFile(path, "utf-8");
 
   const svgrConfig = config?.svgrConfig ?? {};
-  const esbuildConfig = config?.esbuildConfig ?? {};
+  const oxcConfig = config?.oxcConfig ?? {};
 
   const svgrDefaultPlugins = [];
 
@@ -34,13 +34,14 @@ export async function resolveReactComponent(
     },
   });
 
-  const res = await transformWithEsbuild(svgrCode, id, {
-    loader: "jsx",
-    ...esbuildConfig,
+  const res = await transformWithOxc(svgrCode, id, {
+    lang: "jsx",
+    ...oxcConfig,
   });
 
   return {
     code: res.code,
     map: null,
+    moduleType: "js",
   };
 }
