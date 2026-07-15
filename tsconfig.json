@@ -5,10 +5,10 @@
     "skipLibCheck": true,
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "baseUrl": "./",
     "outDir": "./dist"
   },
-  "include": ["./plugin/**/*", "node_modules/microbundle/index.d.ts"],
+  "include": ["./plugin/**/*"],
   "exclude": ["examples/", "node_modules/"]
 }
