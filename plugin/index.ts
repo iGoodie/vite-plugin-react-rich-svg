@@ -1,4 +1,4 @@
-import { EsbuildTransformOptions, Plugin } from "vite";
+import type { Plugin, transformWithOxc } from "vite";
 import type { Config as SvgrConfig } from "@svgr/core";
 import type { Config as SvgoConfig } from "svgo";
 
@@ -6,6 +6,12 @@ import { resolveDataURI } from "./resolvers/dataURI";
 import { resolveRaw } from "./resolvers/raw";
 import { resolveReactComponent } from "plugin/resolvers/component";
 import { resolveBase64 } from "plugin/resolvers/base64";
+
+/**
+ * Options accepted by Vite's `transformWithOxc`. Derived from the function
+ * signature since Vite does not export this type under a stable name.
+ */
+type OxcTransformOptions = NonNullable<Parameters<typeof transformWithOxc>[2]>;
 
 export interface PluginOptions {
   /**
@@ -81,7 +87,7 @@ export interface PluginOptions {
     /**
      * Options used to generate JSX Component code with given SVGR output
      */
-    esbuildConfig?: EsbuildTransformOptions;
+    oxcConfig?: OxcTransformOptions;
   };
 }
 
