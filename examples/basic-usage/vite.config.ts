@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import richSvg from "vite-plugin-react-rich-svg";
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
-      tailwindcss(),
+    tailwindcss(),
     richSvg({
       componentLoaderOptions: {
         svgrConfig: {

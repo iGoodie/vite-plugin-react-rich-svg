@@ -12,7 +12,7 @@ function stringToDataURI(header: string, str: string) {
 
 export async function resolveDataURI(
   path: string,
-  config?: PluginOptions["urlLoaderOptions"]
+  config?: PluginOptions["urlLoaderOptions"],
 ) {
   let svg = await readFile(path, "utf-8");
 

@@ -4,7 +4,7 @@ import type { PluginOptions } from "../index";
 
 export async function resolveRaw(
   path: string,
-  config?: PluginOptions["rawLoaderOptions"]
+  config?: PluginOptions["rawLoaderOptions"],
 ) {
   let svg = await readFile(path, "utf-8");
 

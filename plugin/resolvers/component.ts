@@ -7,7 +7,7 @@ import type { PluginOptions } from "../index";
 export async function resolveReactComponent(
   id: string,
   path: string,
-  config?: PluginOptions["componentLoaderOptions"]
+  config?: PluginOptions["componentLoaderOptions"],
 ) {
   const svg = await readFile(path, "utf-8");
 

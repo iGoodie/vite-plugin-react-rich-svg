@@ -4,7 +4,7 @@ import type { PluginOptions } from "../index";
 
 export async function resolveBase64(
   path: string,
-  config?: PluginOptions["base64LoaderOptions"]
+  config?: PluginOptions["base64LoaderOptions"],
 ) {
   let svg = await readFile(path, "utf-8");
 
