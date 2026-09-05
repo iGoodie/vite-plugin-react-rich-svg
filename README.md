@@ -139,7 +139,7 @@ Acts as a blacklist predicate for the files you want to be ignored.
 
 - `svgrConfig` = Options used while running SVGR on the original svg code/asset (See [SVGR Options](https://react-svgr.com/docs/options/))
 
-- `esbuildConfig` = Options used to generate import code with given SVGR output (See [ESBuild Transform Options](https://esbuild.github.io/api/#transform))
+- `oxcConfig` = Options passed to Vite's Oxc transform when generating JavaScript from the SVGR output (See [Vite's `transformWithOxc` API](https://vite.dev/guide/api-javascript.html#transformwithoxc))
 
 ```ts
   richSvg({
@@ -151,10 +151,12 @@ Acts as a blacklist predicate for the files you want to be ignored.
       // ^ This config will make it load component svg imports loads with forwardedRef & memo wrapped
 
 
-      esbuildConfig:{
-        minify: true
+      oxcConfig: {
+        jsx: {
+          runtime: "automatic",
+        },
       },
-      // ^ This config will make it load component svg imports loads with minification enabled
+      // ^ These options are passed to Oxc after SVGR generates the component code
     },
   }),
 ```
